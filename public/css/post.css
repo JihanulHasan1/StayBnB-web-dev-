@@ -1,0 +1,41 @@
+.post {
+    justify-content: center;
+    padding: 2rem 1rem;
+
+    height: 50%;
+    width: 50%;
+    background-color: rgb(234, 234, 234);
+
+}
+
+.post2 {
+    margin-top: 20px;
+}
+
+.image-preview__image {
+    flex-wrap: wrap;
+    width: 200px;
+    height: 500x;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.previewimg{
+height: 100%;
+width:100%;
+}
+
+
+.fileupload {
+    padding-left: 5%;
+    ;
+    padding-bottom: 5%;
+
+}
+
+.nav {
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+    flex-grow: calc(12);
+
+}
