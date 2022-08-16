@@ -65,7 +65,7 @@
                         </form>
                     </div>
                     <div class="signup-image">
-                        <a href="{{url('/home')}}">
+                        <a href="{{url('/staybnb')}}">
                             <figure><img src="/img/signup.png" alt="sing up image"></figure>
                         </a>
                         <a href="{{ route('auth.home') }}" class="">I am already member</a>

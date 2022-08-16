@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{url('css/style.css')}}">
     <link rel="stylesheet" href="{{url('css/post.css')}}">
 
-    <link rel="icon" href="img/tab-logo.png">
+    <link rel="icon" href="">
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -17,13 +17,11 @@
     <div>
         <div class="header">
             <nav id="navBar">
-                <img src="img/logo.png" class="logo">
+                <img src="{{url('img/tab-logo.png')}}" class="logo">
              
-                <ul class="nav-links">
-                    <li> @yield('host')</li>
-                    <li>@yield('top')</li>
-                    <li>@yield('logout')</li>
-                </ul>
+                
+                    @yield('top')
+                    
                 
 
             </nav>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\HomePageController;
 
 
 
@@ -15,7 +16,7 @@ Route::get('/posts', function () {
 });
 
 //Home 
-Route::get('/staybnb', [UserController::class, 'home'])->name('auth.home');
+Route::get('/staybnb', [HomePageController::class, 'home'])->name('auth.home');
 
 
 

@@ -14,11 +14,7 @@ class UserController extends Controller
 {
 
     
-    public function home()
-    {
-        $Dashboard = Ads::all();
-        return view('welcome', ['dash' => $Dashboard]);
-    }
+   
     public function dash()
     {
         $Dashboard = Ads::all();

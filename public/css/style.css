@@ -36,10 +36,11 @@
 }
 
 #navBar{
-    height:50px;
+    height:8%;
     width: 100%;
     margin-top: 10px;
     background-color: rgb(228, 228, 228);
+    display: flex;
 }
 
 
@@ -95,7 +96,7 @@ nav{
 }
 
 .logo{
-    width: 300px;
+    width: 10%;
     cursor: pointer;
 }
 
@@ -964,19 +965,31 @@ a
     font-weight: bold;
 }
 
-a  {
+a{
     font-family: 'Cairo', sans-serif;
     font-size: 30px;
-    color: #2f3640;
+    color: #000205;
+ 
 }
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
 
 ul{
-    width: 50%;
-    height: 50%;
     display: flex;
-    flex-wrap: wrap;
 }
-
-li{
-    
+   
+li {
+    list-style : none;
+    margin: 5px;;
+    padding: 2%;
 }
