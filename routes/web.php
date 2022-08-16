@@ -44,6 +44,10 @@ Route::get('/auth/dashboard/host/{id}', [UserController::class, 'host'])->name('
 Route::post('/auth/dashboard/host/posts/{id}', [PostController::class, 'store'])->name('auth.host.posts');
 
 
+//search
+Route::get('/auth/dashboard/search/{id}', [UserController::class, 'search'])->name('auth.search');
+Route::post('/auth/dashboard/search/{id}', [UserController::class, 'getSearchResult']);
+
 
 //all Ads
 Route::get('/index/{parmalink}', [UserController::class, 'allads'])->name('ads');

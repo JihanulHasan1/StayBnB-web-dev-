@@ -20,11 +20,11 @@ return new class extends Migration
             $table->string('firstName', 50);
             $table->string('lastName', 50);
             $table->string('phone_no');
-            $table->string('email', 20);
+            $table->string('email', 50);
 
             $table->string('tittle');
             $table->text('description')->nullable();
-            $table->
+          
 
             $table->string('area');
             $table->string('block');

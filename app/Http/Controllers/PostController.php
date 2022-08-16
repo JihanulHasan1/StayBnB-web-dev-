@@ -31,7 +31,7 @@ class PostController extends Controller
 
         $Post->image = $fileName;
 
-        $fileDestination = '../public/img/posts/' . $fileName . '.png';
+        $fileDestination = '../public/img/posts/' . $fileName;
         move_uploaded_file($fileLocationTemp, $fileDestination);
 
 

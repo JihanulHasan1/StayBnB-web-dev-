@@ -19,7 +19,7 @@
     @foreach($allPosts as $p)
    
         <div class="post" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="/img/posts/{{$p->image}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Tittle: {{ $p->area }}</h5>
                 <p class="card-text">Posted By: {{ $p->description }}</p>

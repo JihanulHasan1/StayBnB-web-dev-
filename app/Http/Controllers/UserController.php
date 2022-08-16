@@ -131,6 +131,9 @@ class UserController extends Controller
     }
 
 
+
+
+
     //allposts
     function allpostS()
     {
@@ -139,12 +142,23 @@ class UserController extends Controller
     }
 
 
-
+//host
     function host($id)
     {
        $User= User::where('user_id', '=',$id)->first();
         return view('post',['user'=>$User]);
     }
+
+
+
+//serach
+function search($id){
+
+    $User= User::where('user_id', '=',$id)->first();
+    return view('auth.search',['user'=>$User]);
+
+}
+
 
     //see all registered users
     public function allusers()
