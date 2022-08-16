@@ -21,7 +21,8 @@
         <h5>{{ $user->name }}</h5>
     </nav>
     <div>
-        <form action="" method="POST">
+        <form action="/auth/dashboard/search/{{$user->user_id}}" method="POST">
+            @csrf
             <div class="Hotbg">
                 <input type="text" name="search" class="Hotbg-txt" placeholder="Search >>>">
                 <a href="#" class="Hotbg-btn">
@@ -33,15 +34,10 @@
     </head>
 
     <body>
-
-        <div class="container">
-            @foreach($allPosts as $p)
-
-            <h1>{{$result->tittle}}</h1>
-
-            @endforeach
-
+        <div>
+        @yield('result')
         </div>
+        
 
 
     </body>

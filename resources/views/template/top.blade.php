@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staybnb</title>
     <link rel="stylesheet" href="{{url('css/style.css')}}">
-    <link rel="stylesheet" href="{{url('css/posts.css')}}">
+    <link rel="stylesheet" href="{{url('css/post.css')}}">
 
     <link rel="icon" href="img/tab-logo.png">
     <!-- Bootstrap 5 -->
@@ -18,14 +18,13 @@
         <div class="header">
             <nav id="navBar">
                 <img src="img/logo.png" class="logo">
+             
                 <ul class="nav-links">
                     <li> @yield('host')</li>
-                    
-                </ul>
-                <ul>
                     <li>@yield('top')</li>
                     <li>@yield('logout')</li>
                 </ul>
+                
 
             </nav>
         </div>

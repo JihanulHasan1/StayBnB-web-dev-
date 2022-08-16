@@ -12,22 +12,17 @@ use App\Models\Post;
 
 class SearchController extends Controller
 {
-
-
-    function getSearchResult(Request $request)
+    function getSearchResult(Request $request, $id)
     {
 
         $Posts = Post::all();
         $result = array();
-
         foreach ($Posts as $p) {
-
-            if (Str::contains(Strtolower($p->location), $request->search)) {
-
+            if (Str::contains(Strtolower($p->area), Strtolower($request->search))) {
                 array_push($result, $p);
             }
         }
-
-        return view('auth.search',$result);
+        $User = User::where('user_id', '=', $id)->first();
+        return view('auth.searchResult',['result'=>$result,'user'=>$User]);
     }
 }

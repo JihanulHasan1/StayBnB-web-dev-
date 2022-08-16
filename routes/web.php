@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SearchController;
 
 
 
@@ -46,7 +47,7 @@ Route::post('/auth/dashboard/host/posts/{id}', [PostController::class, 'store'])
 
 //search
 Route::get('/auth/dashboard/search/{id}', [UserController::class, 'search'])->name('auth.search');
-Route::post('/auth/dashboard/search/{id}', [UserController::class, 'getSearchResult']);
+Route::post('/auth/dashboard/search/{id}', [SearchController::class, 'getSearchResult']);
 
 
 //all Ads
