@@ -10,11 +10,11 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function store(Request $request,$id)
+    public function store(Request $request, $id)
     {
 
-        $allPosts = Post::where('user_id','=' ,$id)->get();;
-      /// $allPosts=Post::all();
+        $allPosts = Post::where('user_id', '=', $id)->get();;
+        /// $allPosts=Post::all();
 
         $Post = new Post;
         $Post->firstName = $request->fname;
@@ -23,6 +23,18 @@ class PostController extends Controller
         $Post->email = $request->email;
         $Post->tittle = $request->tittle;
         $Post->description = $request->description;
+
+        $file = $request->file('image');
+        $fileName = $file->getClientOriginalName();
+
+        $fileLocationTemp = $file->getRealPath();
+
+        $Post->image = $fileName;
+
+        $fileDestination = '../public/img/posts/' . $fileName . '.png';
+        move_uploaded_file($fileLocationTemp, $fileDestination);
+
+
         if (!empty($_POST['area'])) {
             $Post->area = $_POST['area'];
         }
@@ -48,16 +60,15 @@ class PostController extends Controller
 
         $Post->payment_date = $request->date;
         $currentDateTime = date('Y-m-d H:i:s');
-        $Post->post_date=  $currentDateTime ;
-        $Post->user_id =$id;
+        $Post->post_date =  $currentDateTime;
+        $Post->user_id = $id;
         $Post->save();
 
-        if(!empty($allPosts)){
+        if (!empty($allPosts)) {
 
             return view('auth.posts', compact('allPosts'));
-        }
-        else{
-           return view('post');
+        } else {
+            return view('post');
         }
     }
 }

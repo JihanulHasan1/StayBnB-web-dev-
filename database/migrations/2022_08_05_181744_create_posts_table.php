@@ -24,6 +24,7 @@ return new class extends Migration
 
             $table->string('tittle');
             $table->text('description')->nullable();
+            $table->
 
             $table->string('area');
             $table->string('block');

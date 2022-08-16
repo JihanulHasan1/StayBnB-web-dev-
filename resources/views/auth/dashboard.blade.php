@@ -3,6 +3,8 @@
 @section('host')
 
 <a href="/auth/dashboard/host/{{ $loggedUser->user_id }}">Host A place</a>
+<a href="/auth/dashboard/serch/ {{$loggedUser->user_id }}}" class="a2">Search for Rent</a>
+<a href="/auth/dashboard/popularPlaces/ {{$loggedUser->user_id }}}" class="a3">Popular Places</a>
 @endsection
 
 @section('top')

@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    hh
+    
     <div class="container" style="padding-top: 4%;">
     <h1 style="text-align: center;margin-bottom:4%;">Create A post</h1>
-        <form action="/auth/dashboard/host/posts/{{ $user->user_id }}" method="POST" enctype="multipart/form-data">
+        <form action="/auth/dashboard/host/posts/{{ $user->user_id }}" method="POST"  enctype="multipart/form-data">
             @csrf
             <div style="display:flex ;flex-wrap: wrap; background-color: rgb(234, 234, 234); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <div class="post" style="padding-left: 15%;">
@@ -125,8 +125,8 @@
                     </div>
                 </div>
                 <div class="fileupload">
-
-                    <label style="color:blue;padding-right:5%;" for="">Upload Pictures </label><input style="padding-bottom:5%;" type="file" name="inpFile" id="inpFile" value="Upload Pictures">
+                    <label style="color:blue;padding-right:5%;" for="">Upload Pictures </label>
+                    <input style="padding-bottom:5%;" type="file" name="image" id="inpFile" value="Upload Pictures">
                     <div class="image-preview" id='imagePreview'>
                         <div class="previewimg"> <img src="" alt="Image Preview" class="image-preview__image"></div>
                         <span class="image-preview__default-text"></span>
@@ -147,10 +147,8 @@
                         const file = this.files[0];
                         if (file) {
                             const reader = new FileReader();
-
                             previewDefaultText.style.display = "none";
                             previewImage.style.display = "block";
-
                             reader.addEventListener("load", function() {
                                 previewImage.setAttribute("src", this.result);
                             });

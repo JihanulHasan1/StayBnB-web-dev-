@@ -20,8 +20,7 @@
                 <img src="img/logo.png" class="logo">
                 <ul class="nav-links">
                     <li> @yield('host')</li>
-                    <li><a href="{{url('/search')}}" class="a2">Search for Rent</a> </li>
-                    <li><a href="listing.html" class="a3">Popular Places</a> </li>
+                    
                 </ul>
                 <ul>
                     <li>@yield('top')</li>

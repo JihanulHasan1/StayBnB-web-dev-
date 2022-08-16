@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ads', function (Blueprint $table) {
-            $table->string('location');
-            $table->string('url');
-            $table->string('parmalink');
-           
+        Schema::table('posts', function (Blueprint $table) {
+            $table->string('image');
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ads');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropColumn('image');
+        });
     }
 };

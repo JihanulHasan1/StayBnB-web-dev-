@@ -42,7 +42,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div>git</div>
+                        
                         <div class="modal-body">
                             <!-- FORM -->
                             <form action="{{route('auth.login')}}" method="POST">
