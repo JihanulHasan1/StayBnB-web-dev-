@@ -165,11 +165,4 @@ function search($id){
     }
 
 
-
-    //see all ads
-    function allads($location)
-    {
-        $data = ['data' => Ads::where('location', '=', $location)];
-        return view('ads', $data);
-    }
 }

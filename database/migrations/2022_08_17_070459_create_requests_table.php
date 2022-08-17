@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->string('user_id');
-            $table->int('post_id');
+            $table->String('post_id');
             $table->string('req_type');
         });
     }

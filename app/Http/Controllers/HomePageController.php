@@ -12,4 +12,10 @@ class HomePageController extends Controller
         $Dashboard = Ads::all();
         return view('welcome', ['dash' => $Dashboard]);
     }
+       //see all ads
+       function allads($location)
+       {
+           $data = ['data' => Ads::where('location', '=', $location)];
+           return view('ads', $data);
+       }
 }

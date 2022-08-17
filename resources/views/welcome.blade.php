@@ -14,17 +14,14 @@
 <body>
     <div class="header">
         <nav id="navBar">
-            <img src="img/logo.png" class="logo">
+            <img style="scale:300%;"src="img/logo.png" class="logo">
             <ul class="">
-
                 <li><a href="" class="a1">Host a Place</a> </li>
                 <li><a href="{{url('/search')}}" class="a2">Search for Rent</a> </li>
                 <li><a href="listing.html" class="a3">Popular Places</a> </li>
             </ul>
             <button class="button-13" onclick="">
-
                 <a href="{{ route('auth.register') }}" class="">Sign Up</a>
-
             </button>
 
             <!-- Button trigger modal -->
@@ -153,7 +150,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $d->location }}</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="{{ '/index/'.$d->parmalink }}" class="btn btn-primary">Show All</a>
+                    <a href="/staybnb{{$d->parmalink}}" class="btn btn-primary">Show All</a>
                 </div>
             </div>
             @endforeach
