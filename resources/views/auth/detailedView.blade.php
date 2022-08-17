@@ -18,8 +18,9 @@
 </body>
 <div class="PostContain">
 
-    <img style="justify-content:center;" src="/img/posts/{{$post->image}}" alt="">
-
+    <div class="postImg">
+        <img style="justify-content:center;" src="/img/posts/{{$post->image}}" alt="">
+    </div>
     <div class="postDiv">
 
 
@@ -55,19 +56,27 @@
         <h5 style="padding:1% ;">Posted by : </h5>
         <div> <Label class="content">{{$post->firstName}} {{$post->lastName}}</Label></div>
         <h5 style="padding:1% ;">Phone : </h5>
-        <div> <Label class="content">{{$post->phone_no}} {{$post->lastName}}</Label></div>
+        <div> <Label class="content">{{$post->phone_no}} </Label></div>
         <h5 style="padding:1% ;">Email: </h5>
-        <div> <Label class="content">{{$post->email}} {{$post->lastName}}</Label></div>
+        <div> <Label class="content">{{$post->email}} </Label></div>
         <h5 style="padding:1% ;">Posted on: </h5>
-        <div> <Label class="content">{{$post->post_date}} {{$post->lastName}}</Label></div>
-
-
-        <form action="" method="POST">
-            @csrf
-             <Button>Rent out</Button></form>
-
-
+        <div> <Label class="content">{{$post->post_date}}</Label></div>
     </div>
+
+
+    <form action="" method="POST">
+        @csrf
+        <Button formaction="/auth/dashboard/search/posts/{$post->id}">Rent out</Button>
+        <Button formaction="/auth/dashboard/search/posts/{$post->id}">Request Visit</Button>
+    </form>
+
+    </form>
+
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+    @endif
 </div>
 
 </html>

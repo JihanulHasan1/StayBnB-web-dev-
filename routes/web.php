@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\HomePageController;
-
+use App\Http\Controllers\RequestController;
 
 
 Route::get('/', function () {
@@ -53,6 +53,8 @@ Route::post('/auth/dashboard/search/{id}', [SearchController::class, 'getSearchR
 //detailed View
 Route::get('/auth/dashboard/search/posts/{id}', [PostController::class, 'detailedView']);
 
+//Request
+Route::post('/auth/dashboard/search/posts/{id}', [RequestController::class, 'store']);
 
 //all Ads
 Route::get('/index/{parmalink}', [UserController::class, 'allads'])->name('ads');
