@@ -14,37 +14,63 @@
 
 .postDiv {
     display: flex;
-    flex-direction: column;
+    margin: 40px;
+    flex-direction: inherit;
+    align-items: center;
+    background-color: rgb(225, 225, 225);
 
+
+}
+
+.postContain img {
+    justify-content: center;
+}
+
+.postDiv3 {
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-bottom: 40%;
+    align-items: center;
+}
+
+.postDiv2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 50%;
     align-items: center;
 
 }
 
-
 .PostContaine {
     border-top: 5%;
     margin: 3%;
-    background-color: rgb(202, 202, 202);
 }
 
 .postDiv label {
     margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
     height: 50px;
     background-color: rgb(255, 255, 255);
-    text-align: justify;
+    text-align: center;
     color: black;
     position: relative;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
     text-decoration: solid;
-   
-}
-.label .text {
-    margin-top: 5px;
+    display: block;
+    padding: 10px;
+
 }
 
-.content{
-    background-color: rgb(198, 241, 255);
+label span {
+    color: green;
+}
+
+.content {
+    color: rgb(98, 98, 98);
+    display: block;
+    padding: 10px;
 }
 
 .image-preview__image {

@@ -16,13 +16,55 @@
 <body>
 
 </body>
-<div class="PostContaine">
-    <div class="postDiv">
-        <img src="/img/posts/{{$post->image}}" alt="">
-    
-    <Label>Post Title :</Label>
+<div class="PostContain">
 
-    <div></div> <Label class="content">{{$post->tittle}}</Label>
+    <img style="justify-content:center;" src="/img/posts/{{$post->image}}" alt="">
+
+    <div class="postDiv">
+
+
+        <div class="postDiv2">
+            <h5 style="padding:1% ;">Post Title : </h5>
+            <div> <Label class="content">{{$post->tittle}}</Label></div>
+            <h5 style="padding:1% ;">Description : </h5>
+            <div> <Label class="content">{{$post->description}}</Label></div>
+            <h5 style="padding:1% ;">Area : </h5>
+            <div> <Label class="content">{{$post->area}}</Label></div>
+            <h5 style="padding:1% ;">Block : </h5>
+            <div> <Label class="content">{{$post->block}}</Label></div>
+            <h5 style="padding:1% ;">Adress : </h5>
+            <div> <Label class="content">{{$post->adress}}</Label></div>
+            <h5 style="padding:1% ;">restriction : </h5>
+            <div> <Label class="content">{{$post->restriction}}</Label></div>
+
+        </div>
+        <div class="postDiv2">
+
+            <h5 style="padding:1% ;">Price : </h5>
+            <div> <Label class="content">{{$post->price}}</Label></div>
+            <h5 style="padding:1% ;">Advance For: </h5>
+            <div> <Label class="content">{{$post->advance}}</Label></div>
+            <h5 style="padding:1% ;">Last Date Of Payment : </h5>
+            <div> <Label class="content">{{$post->payment_date}}</Label></div>
+
+        </div>
+
+    </div>
+    <div class="postDiv3">
+
+        <h5 style="padding:1% ;">Posted by : </h5>
+        <div> <Label class="content">{{$post->firstName}} {{$post->lastName}}</Label></div>
+        <h5 style="padding:1% ;">Phone : </h5>
+        <div> <Label class="content">{{$post->phone_no}} {{$post->lastName}}</Label></div>
+        <h5 style="padding:1% ;">Email: </h5>
+        <div> <Label class="content">{{$post->email}} {{$post->lastName}}</Label></div>
+        <h5 style="padding:1% ;">Posted on: </h5>
+        <div> <Label class="content">{{$post->post_date}} {{$post->lastName}}</Label></div>
+
+
+        <form action="" method="POST">
+            @csrf
+             <Button>Rent out</Button></form>
 
 
     </div>
