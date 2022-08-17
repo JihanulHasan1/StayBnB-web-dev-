@@ -16,9 +16,19 @@ use App\Models\PostRequest;
 
 class RequestController extends Controller
 {
-    function store(Request $request)
+    function store(Request $request, $id)
+
+
     {
-        return redirect()->back()->with('message', 'IT WORKS!');
-        
+
+
+        $User = User::where('post_id', '=', $id)->first();
+        $UserRequest = new PostRequest;
+        $UserRequest->user_id = $User->user_id;
+        $UserRequest->post_id = $id;
+        $UserRequest->req_type = 'Visit';
+        $UserRequest->save();
+        return redirect()->back()->with('message', 'Request Submitted!');
+        echo  $UserRequest;
     }
 }

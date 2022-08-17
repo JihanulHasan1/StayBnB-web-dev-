@@ -50,8 +50,11 @@ Route::post('/auth/dashboard/host/posts/{id}', [PostController::class, 'store'])
 Route::get('/auth/dashboard/search/{id}', [UserController::class, 'search'])->name('auth.search');
 Route::post('/auth/dashboard/search/{id}', [SearchController::class, 'getSearchResult']);
 
+
+
 //detailed View
 Route::get('/auth/dashboard/search/posts/{id}', [PostController::class, 'detailedView']);
+
 
 //Request
 Route::post('/auth/dashboard/search/posts/{id}', [RequestController::class, 'store']);

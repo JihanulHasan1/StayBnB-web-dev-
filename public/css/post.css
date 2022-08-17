@@ -17,7 +17,7 @@
     margin: 40px;
     flex-direction: inherit;
     align-items: center;
-    background-color: rgb(225, 225, 225);
+    background-color: rgba(225, 225, 225, 0.785);
 
 
 }
@@ -32,7 +32,10 @@
     background-color: rgb(255, 255, 255);
     align-items: center;
 }
-
+.postImg:hover{
+    scale: 2%;
+    transform:rotateX(90deg) translateY(50%)
+}
 .postImg img {
     height: 10%;
     width: 50%;
@@ -61,6 +64,7 @@
 }
 
 .postDiv2 {
+
     margin-top: 15px;
     margin-bottom: 15px;
     width: 50%;
@@ -85,12 +89,16 @@
     text-align: center;
     color: black;
     position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
     text-decoration: solid;
     display: block;
     padding: 10px;
 
+}
+
+.postDiv2 h5{
+   margin-left: 5%;
+   font-family: 'Times New Roman', Times, serif;
 }
 
 label span {

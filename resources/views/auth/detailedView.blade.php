@@ -65,8 +65,11 @@
 
 
     <form action="" method="POST">
+
         @csrf
-        <Button formaction="/auth/dashboard/search/posts/{$post->id}">Rent out</Button>
+
+        <input type="hidden" name="yes" >
+        <Button formaction="/auth/dashboard/search/posts/{$post->id}/checkout">Rent out</Button>
         <Button formaction="/auth/dashboard/search/posts/{$post->id}">Request Visit</Button>
     </form>
 
