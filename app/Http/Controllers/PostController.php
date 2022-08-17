@@ -62,6 +62,7 @@ class PostController extends Controller
         $currentDateTime = date('Y-m-d H:i:s');
         $Post->post_date =  $currentDateTime;
         $Post->user_id = $id;
+        $Post->post_id = strval((time() - 999999999));
         $Post->save();
 
         if (!empty($allPosts)) {
@@ -70,5 +71,13 @@ class PostController extends Controller
         } else {
             return view('post');
         }
+    }
+
+    function detailedView($id)
+    {
+
+        $Post = Post::where('post_id', '=', $id)->first();
+       // echo $Post;
+          return view('auth.detailedView', ['post' => $Post]);
     }
 }

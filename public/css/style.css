@@ -13,7 +13,8 @@
 
 .posts{
     align-items: center;
-    height: auto;
+    height: 5%;
+
     display: flex;
     flex-wrap: wrap;
     padding-left: 5%;
@@ -921,6 +922,7 @@ height: 100%;
 {
     background: azure;
     color: black;
+  
 }
 
 .Hotbg-btn
@@ -967,7 +969,7 @@ a
 
 a{
     font-family: 'Cairo', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     color: #000205;
  
 }
@@ -992,4 +994,9 @@ li {
     list-style : none;
     margin: 5px;;
     padding: 2%;
+}
+
+.search{
+
+    height: 10%;
 }

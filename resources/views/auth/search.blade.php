@@ -20,7 +20,9 @@
     <nav>
         <h5>{{ $user->name }}</h5>
     </nav>
-    <div>
+    <div class="search">
+
+    
         <form action="/auth/dashboard/search/{{$user->user_id}}" method="POST">
             @csrf
             <div class="Hotbg">
@@ -34,7 +36,7 @@
     </head>
 
     <body>
-        <div>
+        <div >
         @yield('result')
         </div>
         

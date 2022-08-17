@@ -32,7 +32,7 @@ Route::get('/home', [UserController::class, 'logout'])->name('auth.logout');
 
 
 //profile
-Route::post('/auth/dashboard/profile', [UserController::class, 'profile'])->name('auth.profile');
+Route::get('/auth/dashboard/profile/{id}', [UserController::class, 'profile'])->name('auth.profile');
 
 
 
@@ -49,6 +49,9 @@ Route::post('/auth/dashboard/host/posts/{id}', [PostController::class, 'store'])
 //search
 Route::get('/auth/dashboard/search/{id}', [UserController::class, 'search'])->name('auth.search');
 Route::post('/auth/dashboard/search/{id}', [SearchController::class, 'getSearchResult']);
+
+//detailed View
+Route::get('/auth/dashboard/search/posts/{id}', [PostController::class, 'detailedView']);
 
 
 //all Ads

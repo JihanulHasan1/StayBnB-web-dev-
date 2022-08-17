@@ -126,16 +126,16 @@
         <div class="container">
 
             <div class="search-bar">
-                <form>
+                <form action="/auth/dashboard/search/" method="POST">
                     <div class="location-input">
                         <label>Location</label>
-                        <input type="text" placeholder="Enter Road No. & Block No.">
+                        <input type="text" name="Road_Block" placeholder="Enter Road No. & Block No.">
                     </div>
                     <div>
                         <label>Date</label>
                         <input type="text" placeholder="Add Date">
                     </div>
-                    <button type="submit"><img src="search.png"> </button>
+                    <button type="submit"><img style="width:100%;" src="img/search.png"> </button>
                 </form>
 
             </div>

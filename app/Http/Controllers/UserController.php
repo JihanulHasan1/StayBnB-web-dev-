@@ -120,9 +120,10 @@ class UserController extends Controller
 
 
     //profile
-    function profile(Request $request)
+    function profile($id)
     {
-        $userInfo = User::where('email', '=', $request->email)->first();
+        $userInfo = User::where('user_id', '=', $id)->first();
+        
         return view('auth.user_profile',['loggedUser'=>$userInfo]);
     }
 
