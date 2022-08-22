@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Ads;
 use App\Models\Post;
+use App\Models\PostRequest;
 
 class UserController extends Controller
 {
@@ -122,13 +123,31 @@ class UserController extends Controller
     //profile
     function profile($id)
     {
-        $userInfo = User::where('user_id', '=', $id)->first();
+        $result = array();
+        $postrequests= array();
+        $userInfo = User::where('user_id', '=', $id)->first(); 
+        $posts=Post::all(); 
+        $requests =PostRequest::all();
+        foreach ($posts as $p) {
+        if ($id==$p->user_id) {
+            array_push($result, $p);
+        }
+        }
+        foreach ($requests as $r) {
+            if ($id==$r->user_id) {
+                foreach ($posts as $p) {
+                    if ($r->post_id==$p->post_id) {
+                        //echo $p;
+                       array_push($postrequests, $p);
+                    }
+               
+                }
+
+            }
+        }
+        return view('auth.user_profile',['loggedUser'=>$userInfo,'result'=>$result,'request'=>$postrequests]);
         
-        return view('auth.user_profile',['loggedUser'=>$userInfo]);
     }
-
-
-
 
 
     //allposts

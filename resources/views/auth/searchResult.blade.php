@@ -9,7 +9,7 @@
         <div class="posts">
             @foreach($result as $r)
             <button></button>
-            <a class="jian" href="/auth/dashboard/search/posts/{{$r->post_id}}">
+            <a class="jian" href="{{ route('post.detailedView', ['User_id'=>$user->user_id,'post_id'=>$r->post_id]) }}">
                 <div class="post" style="width: 18rem;">
                     <img src="/img/posts/{{$r->image}}" class="card-img-top" alt="...">
                     <div class="card-body">

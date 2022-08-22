@@ -1,7 +1,7 @@
 .buttondiv {
     text-align: center;
     padding: 10%;
-    background-color: #e7e7e76b;
+    background-color: #e7e7e7b8;
 }
 
 .wrapper {
@@ -20,7 +20,7 @@
     font-size: 18px;
     font-family: sans-serif;
     text-decoration: none;
-    color: #333;
+    color: rgb(27, 27, 27);
     border: 2px solid #333;
     letter-spacing: 2px;
     text-align: center;
@@ -40,12 +40,14 @@
     left: 0;
     width: 0;
     height: 100%;
-    background: #040c4e;
+    background: #00d5ff95;
+    color: rgb(27, 27, 27);
+
     transition: all .35s;
 }
 
 .button:hover {
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .button:hover:after {

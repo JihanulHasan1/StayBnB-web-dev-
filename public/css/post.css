@@ -1,7 +1,6 @@
 .post {
     justify-content: center;
     padding: 2rem 1rem;
-
     height: 50%;
     width: 50%;
     background-color: rgb(234, 234, 234);
@@ -14,10 +13,11 @@
 
 .postDiv {
     display: flex;
-    margin: 40px;
+    margin-left: 25%;
     flex-direction: inherit;
+    justify-content: center;
     align-items: center;
-    background-color: rgba(225, 225, 225, 0.785);
+    background-color: rgba(158, 221, 255, 0.785);
 
 
 }
@@ -61,6 +61,8 @@
     margin-left: 25%;
     margin-bottom: 8%;
     align-items: center;
+    display: flex;
+    background-color: azure;
 }
 
 .postDiv2 {
@@ -69,6 +71,7 @@
     margin-bottom: 15px;
     width: 50%;
     align-items: center;
+    
 
 }
 
@@ -87,7 +90,7 @@
     height: 50px;
     background-color: rgb(255, 255, 255);
     text-align: center;
-    color: black;
+    color: rgb(255, 255, 255);
     position: relative;
     border-radius: 5px;
     text-decoration: solid;

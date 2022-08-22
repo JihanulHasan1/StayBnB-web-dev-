@@ -73,11 +73,11 @@ class PostController extends Controller
         }
     }
 
-    function detailedView($id)
+    function detailedView($User_id, $post_id,)
     {
 
-        $Post = Post::where('post_id', '=', $id)->first();
-       // echo $Post;
-          return view('auth.detailedView', ['post' => $Post]);
+        $Post = Post::where('post_id', '=', $post_id)->first();
+        //echo $post_id;
+        return view('auth.detailedView', ['post' => $Post, 'User_id'=> $User_id]);
     }
 }

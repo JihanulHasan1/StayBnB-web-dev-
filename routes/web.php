@@ -47,10 +47,11 @@ Route::get('/auth/dashboard/search/{id}', [UserController::class, 'search'])->na
 Route::post('/auth/dashboard/search/{id}', [SearchController::class, 'getSearchResult']);
 
 //POST DETAILED VIEW
-Route::get('/auth/dashboard/search/posts/{id}', [PostController::class, 'detailedView']);
+Route::get('/auth/dashboard/search/posts/{User_id}/{post_id}', [PostController::class, 'detailedView'])->name('post.detailedView');
 
 //POST-REQUEST
-Route::post('/auth/dashboard/search/posts/{id}', [RequestController::class, 'store']);
+Route::post('/auth/dashboard/search/posts/{User_id}/{post_id}/checkout', [RequestController::class, 'store1'])->name('post.request1');
+Route::post('/auth/dashboard/search/posts/{User_id}/{post_id}', [RequestController::class, 'store2'])->name('post.request2');;
 
 
 //MIDDLE WARE

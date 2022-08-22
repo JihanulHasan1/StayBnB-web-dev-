@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staybnb</title>
     <link rel="stylesheet" href="{{url('css/style.css')}}">
+    <link rel="stylesheet" href="{{url('css/post.css')}}">
     <link rel="icon" href="img/tab-logo.png">
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -41,7 +42,7 @@
                                 <input type="password" class="form-control" id="inputPassword2" placeholder="Edit Name">
                             </div>
                             <div class="col-auto">
-                                <button type="submit"  style="padding-left: 20px;" class="btn btn-primary mb-3">Confirm Name</button>
+                                <button type="submit" style="padding-left: 20px;" class="btn btn-primary mb-3">Confirm Name</button>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -55,7 +56,7 @@
                                 <input type="password" class="form-control" id="inputPassword2" placeholder="Edit Email ">
                             </div>
                             <div class="col-auto">
-                                <button type="submit"  style="padding-left: 20px;" class="btn btn-primary mb-3">Confirm Email</button>
+                                <button type="submit" style="padding-left: 20px;" class="btn btn-primary mb-3">Confirm Email</button>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -69,20 +70,65 @@
                                 <input type="password" class="form-control" id="inputPassword2" placeholder=" Edit Password">
                             </div>
                             <div class="col-auto">
-                                <button type="submit"  style="padding-left: 20px;" class="btn btn-primary mb-3">Confirm Password</button>
+                                <button type="submit" style="padding-left: 20px;" class="btn btn-primary mb-3">Confirm Password</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
 
-            <button class="accordion">Section 2</button>
+            <button class="accordion">Show All Posts</button>
             <div class="panel">
+                <div class="postDi">
+                    <div class="pos" style="display: flex;flex-wrap:wrap;">
+                        @foreach($result as $r)
+                        <div class="post" style="width: 18rem;">
+                            <img src="/img/posts/{{$r->image}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Tittle: {{ $r->area }}</h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Posted By: {{ $r->firstName }} {{ $r->lastName }}</li>
+                                <li class="list-group-item">Price: {{ $r->price }}</li>
+                                <li class="list-group-item">Block: {{ $r->block }}</li>
+                                <li class="list-group-item">Restiction : {{ $r->restriction }}</li>
+                                <li class="list-group-item">Posted on : {{ $r->post_date }}</li>
+                            </ul>
+                        </div>
+
+                        @endforeach
+                    </div>
+                </div>
             </div>
 
-            <button class="accordion">Section 3</button>
+            <button class="accordion">Show Your Requests</button>
             <div class="panel">
+                <div class="postDi">
+                    <div class="pos" style="display: flex;flex-wrap:wrap;">
+                        @foreach($request as $r)
+                        <div class="post" style="width: 18rem;">
+                            <img src="/img/posts/{{$r->image}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Tittle: {{ $r->area }}</h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Posted By: {{ $r->firstName }} {{ $r->lastName }}</li>
+                                <li class="list-group-item">Price: {{ $r->price }}</li>
+                                <li class="list-group-item">Block: {{ $r->block }}</li>
+                                <li class="list-group-item">Restiction : {{ $r->restriction }}</li>
+                                <li class="list-group-item">Posted on : {{ $r->post_date }}</li>
+                            </ul>
+                        </div>
+
+                        @endforeach
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <button class="accordion">Show Customer Requests</button>
+        <div class="panel">
+        </div>
         </div>
         <script src="{{ url('js/accordion.js') }}"></script>
     </body>

@@ -11,15 +11,26 @@ use App\Models\PostRequest;
 
 class RequestController extends Controller
 {
-    function store(Request $request, $id)
+    function store1($User_id, $post_id)
     {
-        $User = User::where('post_id', '=', $id)->first();
         $UserRequest = new PostRequest;
-        $UserRequest->user_id = $User->user_id;
-        $UserRequest->post_id = $id;
+        $UserRequest->user_id =$User_id;
+        $UserRequest->post_id =$post_id;
+        $UserRequest->req_type = 'Rent Out';
+        $UserRequest->save();
+        return request('checkout');
+        echo $User_id, $post_id;
+      
+    }
+    function store2($User_id, $post_id)
+    {
+        $UserRequest = new PostRequest;
+        $UserRequest->user_id =$User_id;
+        $UserRequest->post_id =$post_id;
         $UserRequest->req_type = 'Visit';
         $UserRequest->save();
         return redirect()->back()->with('message', 'Request Submitted!');
-        echo  $UserRequest;
+      
     }
+
 }
