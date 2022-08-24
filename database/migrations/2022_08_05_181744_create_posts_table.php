@@ -36,6 +36,7 @@ return new class extends Migration
             $table->string('payment_date');
             $table->string('post_date');
             $table->string('user_id');
+            $table->string('request_type')->nullable();
           
            // $table->foreign('user_id')->references('user_id')->on('users');
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Traits;
 
 use Illuminate\Http\Request;
@@ -125,7 +126,9 @@ class UserController extends Controller
     {
         $result = array();
         $postrequests = array();
+        $reqtype=array();
         $postrequestbyothers = array();
+        $reqtype2=array();
         $userInfo = User::where('user_id', '=', $id)->first();
         $posts = Post::all();
         $requests = PostRequest::all();
@@ -136,15 +139,26 @@ class UserController extends Controller
             }
         }
         foreach ($requests as $r) {
+
             if ($id == $r->user_id) {
+                
                 foreach ($posts as $p) {
+                    
                     if ($r->post_id == $p->post_id) {
-                        //echo $p;
+                       $random=array();
+                       array_push($random, $r);
                         array_push($postrequests, $p);
+                        $postrequests=array_merge($postrequests,$random);
+                        
+                     //   array_push($postrequests, ["reqType"=>$r->req_type]);
+
                     }
                 }
             }
         }
+foreach($postrequests as $pr){
+echo $pr;
+}
         foreach ($result as $p) {
             foreach ($requests as $r) {
                 if ($p->post_id == $r->post_id) {
@@ -154,7 +168,9 @@ class UserController extends Controller
             }
         }
 
-        return view('auth.user_profile', ['loggedUser' => $userInfo, 'result' => $result, 'request' => $postrequests,'requestbyothers'=>$postrequestbyothers]);
+        return view('auth.user_profile', ['loggedUser' => $userInfo, 
+        'result' => $result, 'request' => $postrequests,'requestType'=>$reqtype,
+        'requestbyothers'=>$postrequestbyothers]);
     }
 
 
