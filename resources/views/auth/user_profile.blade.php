@@ -24,7 +24,7 @@
                     <li><a href="listing.html" class="a3">Popular Places</a> </li>
                 </ul>
                 <button class="button-13" onclick="">
-                    <a href="{{ route('auth.register') }}" class="">Sign Up</a>
+                    <a href="{{ route('auth.logout') }}" class="">Sign out</a>
                 </button>
         </div>
     </head>
@@ -127,6 +127,7 @@
                                 <li class="list-group-item">Block: {{ $r->block }}</li>
                                 <li class="list-group-item">Restiction : {{ $r->restriction }}</li>
                                 <li class="list-group-item">Posted on : {{ $r->post_date }}</li>
+                                <li style="background-color:aqua;text-align:center;">Request Type : {{ $r->request_type }}</li>
 
                             </ul>
 

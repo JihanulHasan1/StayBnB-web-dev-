@@ -126,9 +126,9 @@ class UserController extends Controller
     {
         $result = array();
         $postrequests = array();
-        $reqtype=array();
+        $reqtype = array();
         $postrequestbyothers = array();
-        $reqtype2=array();
+        $reqtype2 = array();
         $userInfo = User::where('user_id', '=', $id)->first();
         $posts = Post::all();
         $requests = PostRequest::all();
@@ -141,36 +141,41 @@ class UserController extends Controller
         foreach ($requests as $r) {
 
             if ($id == $r->user_id) {
-                
+
                 foreach ($posts as $p) {
-                    
+
                     if ($r->post_id == $p->post_id) {
-                       $random=array();
-                       array_push($random, $r);
+
+                        $p->request_type = $r->req_type;
+
                         array_push($postrequests, $p);
-                        $postrequests=array_merge($postrequests,$random);
-                        
-                     //   array_push($postrequests, ["reqType"=>$r->req_type]);
+
+
+                        //   array_push($postrequests, ["reqType"=>$r->req_type]);
 
                     }
                 }
             }
         }
-foreach($postrequests as $pr){
-echo $pr;
-}
+        foreach ($postrequests as $pr) {
+            echo $pr;
+        }
+
+
         foreach ($result as $p) {
             foreach ($requests as $r) {
                 if ($p->post_id == $r->post_id) {
-                  //  echo $p;
-                  array_push($postrequestbyothers, $p);
+                    //  echo $p;
+                    array_push($postrequestbyothers, $p);
                 }
             }
         }
 
-        return view('auth.user_profile', ['loggedUser' => $userInfo, 
-        'result' => $result, 'request' => $postrequests,'requestType'=>$reqtype,
-        'requestbyothers'=>$postrequestbyothers]);
+        return view('auth.user_profile', [
+            'loggedUser' => $userInfo,
+            'result' => $result, 'request' => $postrequests, 'requestType' => $reqtype,
+            'requestbyothers' => $postrequestbyothers
+        ]);
     }
 
 
