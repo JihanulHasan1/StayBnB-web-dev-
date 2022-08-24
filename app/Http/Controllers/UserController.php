@@ -14,8 +14,8 @@ use App\Models\PostRequest;
 class UserController extends Controller
 {
 
-    
-   
+
+
     public function dash()
     {
         $Dashboard = Ads::all();
@@ -30,7 +30,7 @@ class UserController extends Controller
     {
         return view('auth.signup');
     }
-    
+
     //Register
 
     public function store(Request $request)
@@ -71,7 +71,7 @@ class UserController extends Controller
     }
 
 
-    
+
     //LOGIN
 
     public function check(Request $request)
@@ -100,7 +100,7 @@ class UserController extends Controller
         }
     }
 
-    
+
 
     //LOGOUT
     public function logout()
@@ -124,29 +124,37 @@ class UserController extends Controller
     function profile($id)
     {
         $result = array();
-        $postrequests= array();
-        $userInfo = User::where('user_id', '=', $id)->first(); 
-        $posts=Post::all(); 
-        $requests =PostRequest::all();
-        foreach ($posts as $p) {
-        if ($id==$p->user_id) {
-            array_push($result, $p);
-        }
-        }
-        foreach ($requests as $r) {
-            if ($id==$r->user_id) {
-                foreach ($posts as $p) {
-                    if ($r->post_id==$p->post_id) {
-                        //echo $p;
-                       array_push($postrequests, $p);
-                    }
-               
-                }
+        $postrequests = array();
+        $postrequestbyothers = array();
+        $userInfo = User::where('user_id', '=', $id)->first();
+        $posts = Post::all();
+        $requests = PostRequest::all();
 
+        foreach ($posts as $p) {
+            if ($id == $p->user_id) {
+                array_push($result, $p);
             }
         }
-        return view('auth.user_profile',['loggedUser'=>$userInfo,'result'=>$result,'request'=>$postrequests]);
-        
+        foreach ($requests as $r) {
+            if ($id == $r->user_id) {
+                foreach ($posts as $p) {
+                    if ($r->post_id == $p->post_id) {
+                        //echo $p;
+                        array_push($postrequests, $p);
+                    }
+                }
+            }
+        }
+        foreach ($result as $p) {
+            foreach ($requests as $r) {
+                if ($p->post_id == $r->post_id) {
+                  //  echo $p;
+                  array_push($postrequestbyothers, $p);
+                }
+            }
+        }
+
+        return view('auth.user_profile', ['loggedUser' => $userInfo, 'result' => $result, 'request' => $postrequests,'requestbyothers'=>$postrequestbyothers]);
     }
 
 
@@ -158,22 +166,22 @@ class UserController extends Controller
     }
 
 
-//host
+    //host
     function host($id)
     {
-       $User= User::where('user_id', '=',$id)->first();
-        return view('post',['user'=>$User]);
+        $User = User::where('user_id', '=', $id)->first();
+        return view('post', ['user' => $User]);
     }
 
 
 
-//serach
-function search($id){
+    //serach
+    function search($id)
+    {
 
-    $User= User::where('user_id', '=',$id)->first();
-    return view('auth.search',['user'=>$User]);
-
-}
+        $User = User::where('user_id', '=', $id)->first();
+        return view('auth.search', ['user' => $User]);
+    }
 
 
     //see all registered users
@@ -182,6 +190,4 @@ function search($id){
         $users = User::all();
         return view('users', ['users' => $users]);
     }
-
-
 }

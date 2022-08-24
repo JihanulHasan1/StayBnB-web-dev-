@@ -13,14 +13,20 @@
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html>
 
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-
-        </style>
+        <div>
+            <nav id="navBar">
+                <img style="scale:300%;" src="/img/logo.png" class="logo">
+                <ul class="">
+                    <li><a href="{{route('auth.host',['id'=>$loggedUser->user_id]) }}" class="a1">Host a Place</a> </li>
+                    <li><a href="{{url('/search')}}" class="a2">Search for Rent</a> </li>
+                    <li><a href="listing.html" class="a3">Popular Places</a> </li>
+                </ul>
+                <button class="button-13" onclick="">
+                    <a href="{{ route('auth.register') }}" class="">Sign Up</a>
+                </button>
+        </div>
     </head>
 
     <body>
@@ -124,13 +130,15 @@
                     </div>
                 </div>
             </div>
+            <button class="accordion"> Show Customer Requests<i style="margin-left:200px;scale:100px;"class="fas fa-bell">    {{count($requestbyothers)}}</i></button>
+            <div class="panel">
+           
+            </div>
         </div>
 
-        <button class="accordion">Show Customer Requests</button>
-        <div class="panel">
-        </div>
+
         </div>
         <script src="{{ url('js/accordion.js') }}"></script>
     </body>
 
-    </html>
+</html>
