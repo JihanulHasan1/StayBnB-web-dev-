@@ -28,16 +28,18 @@
     position: relative;
 
     transform: translate (-50%, -50%);
-    padding: 10px;
+    padding-top: 50px;
     background-color: rgb(255, 255, 255);
     align-items: center;
+    transition:all 0.25s ease;
+}
+.postImg:hover{
+    -webkit-transform:scale(2)
 }
 
-.postImg:hover {
-    scale: 2%;
-    transform: rotateX(90deg) translateY(50%)
+.PostContain{
+    padding-top: 12%;
 }
-
 .postImg img {
     height: 10%;
     width: 50%;
@@ -73,15 +75,12 @@
     margin-bottom: 15px;
     width: 50%;
     align-items: center;
-
+    
 
 }
-
-a {
-    padding: 10px;
-    ;
+a{
+    padding: 10px;;
 }
-
 .PostContain {
     height: 100%;
     width: 80%;
@@ -106,9 +105,9 @@ a {
 
 }
 
-.postDiv2 h5 {
-    margin-left: 5%;
-    font-family: 'Times New Roman', Times, serif;
+.postDiv2 h5{
+   margin-left: 5%;
+   font-family: 'Times New Roman', Times, serif;
 }
 
 label span {
@@ -148,5 +147,9 @@ label span {
     flex-grow: calc(12);
 
 }
+a {
+    font-family: 'Cairo', sans-serif;
+    font-size: 20px;
+    color: #000205;
 
-
+}

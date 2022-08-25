@@ -25,12 +25,12 @@
         <button class="btn btn-primary"><a href="{{ route('auth.logout') }}" style="color:black;">Logout</a></button>
     </div>
 </nav>
-
+<div class="postImg">
+    <img style="display:flex;margin-left:50%;" src="/img/posts/{{$post->image}}" alt="">
+</div>
 <div class="PostContain">
 
-    <div class="postImg">
-        <img style="display:flex;margin-left:50%;" src="/img/posts/{{$post->image}}" alt="">
-    </div>
+
     <div class="postDiv">
 
 
@@ -44,7 +44,7 @@
             <h5 style="padding:1% ;">Block : </h5>
             <div> <Label class="content">{{$post->block}}</Label></div>
             <h5 style="padding:1% ;">Adress : </h5>
-            <div> <Label class="content">{{$post->adress}}</Label></div>
+            <div> <Label style="height: 5%;" class="content">{{$post->Address}}</Label></div>
             <h5 style="padding:1% ;">restriction : </h5>
             <div> <Label class="content">{{$post->restriction}}</Label></div>
 
