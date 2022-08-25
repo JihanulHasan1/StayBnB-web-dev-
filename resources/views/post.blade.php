@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=
     
     , initial-scale=1.0">
+ 
     <link rel="stylesheet" href="{{url('css/post.css')}}">
     <link rel="stylesheet" href="{{url('css/button.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,10 +16,16 @@
 </head>
 
 <body>
-    
+    <div class="navi">
+        <a style="" href="/auth/dashboard/host/{{$user->user_id}}">Host A place</a>
+        <a href="/auth/dashboard/search/{{$user->user_id}}" class="a2">Search for Rent</a>
+        <a href="/auth/dashboard/popularPlaces/{{$user->user_id}}" class="a3">Popular Places</a>
+        <a href="/auth/dashboard/profile/{{$user->user_id}}" style="color:black;">{{ $user->name }} </a>
+        <button class="btn btn-primary"><a href="{{ route('auth.logout') }}" style="color:black;">Logout</a></button>
+    </div>
     <div class="container" style="padding-top: 4%;">
-    <h1 style="text-align: center;margin-bottom:4%;">Create A post</h1>
-        <form action="/auth/dashboard/host/posts/{{ $user->user_id }}" method="POST"  enctype="multipart/form-data">
+        <h1 style="text-align: center;margin-bottom:4%;">Create A post</h1>
+        <form action="/auth/dashboard/host/posts/{{ $user->user_id }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div style="display:flex ;flex-wrap: wrap; background-color: rgb(234, 234, 234); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <div class="post" style="padding-left: 15%;">

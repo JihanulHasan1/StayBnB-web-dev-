@@ -1,8 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
-
 use App\Traits;
 
 use Illuminate\Http\Request;
@@ -14,8 +11,6 @@ use App\Models\PostRequest;
 
 class UserController extends Controller
 {
-
-
 
     public function dash()
     {
@@ -52,7 +47,6 @@ class UserController extends Controller
             ]
         );
 
-
         if ($request->has('term')) {
             $User = new User;
             $User->user_id = uniqid();
@@ -70,8 +64,6 @@ class UserController extends Controller
         } else {
         }
     }
-
-
 
     //LOGIN
 
@@ -101,8 +93,6 @@ class UserController extends Controller
         }
     }
 
-
-
     //LOGOUT
     public function logout()
     {
@@ -111,7 +101,6 @@ class UserController extends Controller
             return redirect('staybnb/');
         }
     }
-
 
     //dashboard
     public function dashboard()
@@ -141,17 +130,10 @@ class UserController extends Controller
         foreach ($requests as $r) {
 
             if ($id == $r->user_id) {
-
                 foreach ($posts as $p) {
-
                     if ($r->post_id == $p->post_id) {
-
                         $p->request_type = $r->req_type;
-
                         array_push($postrequests, $p);
-
-
-                        //   array_push($postrequests, ["reqType"=>$r->req_type]);
 
                     }
                 }
@@ -161,16 +143,14 @@ class UserController extends Controller
             echo $pr;
         }
 
-
         foreach ($result as $p) {
             foreach ($requests as $r) {
                 if ($p->post_id == $r->post_id) {
-                    //  echo $p;
+                    $p->request_type = $r->req_type;
                     array_push($postrequestbyothers, $p);
                 }
             }
         }
-
         return view('auth.user_profile', [
             'loggedUser' => $userInfo,
             'result' => $result, 'request' => $postrequests, 'requestType' => $reqtype,
@@ -186,14 +166,12 @@ class UserController extends Controller
         return view('auth.dashboard', [$data]);
     }
 
-
     //host
     function host($id)
     {
         $User = User::where('user_id', '=', $id)->first();
         return view('post', ['user' => $User]);
     }
-
 
 
     //serach

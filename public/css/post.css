@@ -32,10 +32,12 @@
     background-color: rgb(255, 255, 255);
     align-items: center;
 }
-.postImg:hover{
+
+.postImg:hover {
     scale: 2%;
-    transform:rotateX(90deg) translateY(50%)
+    transform: rotateX(90deg) translateY(50%)
 }
+
 .postImg img {
     height: 10%;
     width: 50%;
@@ -71,8 +73,13 @@
     margin-bottom: 15px;
     width: 50%;
     align-items: center;
-    
 
+
+}
+
+a {
+    padding: 10px;
+    ;
 }
 
 .PostContain {
@@ -90,7 +97,7 @@
     height: 50px;
     background-color: rgb(255, 255, 255);
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     position: relative;
     border-radius: 5px;
     text-decoration: solid;
@@ -99,9 +106,9 @@
 
 }
 
-.postDiv2 h5{
-   margin-left: 5%;
-   font-family: 'Times New Roman', Times, serif;
+.postDiv2 h5 {
+    margin-left: 5%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 label span {
@@ -141,3 +148,5 @@ label span {
     flex-grow: calc(12);
 
 }
+
+

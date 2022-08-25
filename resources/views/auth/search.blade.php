@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staybnb</title>
     <link rel="stylesheet" href="{{url('css/style.css')}}">
-    <link rel="stylesheet" href="{{url('css/posts.css')}}">
+    <link rel="stylesheet" href="{{url('css/post.css')}}">
 
     <link rel="icon" href="img/tab-logo.png">
     <!-- Bootstrap 5 -->
@@ -15,14 +15,19 @@
 </head>
 
 
-<body>
+<body style="background-color:beige ;">
 
-    <nav>
-        <h5>{{ $user->name }}</h5>
+    <nav class="navBar">
+        <div class="">
+            <a style="" href="/auth/dashboard/host/{{$user->user_id}}">Host A place</a>
+            <a href="/auth/dashboard/popularPlaces/{{$user->user_id}}" class="a3">Popular Places</a>
+            <a href="/auth/dashboard" style="color:black;">Back </a>
+            <button class="btn btn-primary"><a href="{{ route('auth.logout') }}" style="color:black;">Logout</a></button>
+        </div>
     </nav>
     <div class="search">
 
-    
+
         <form action="/auth/dashboard/search/{{$user->user_id}}" method="POST">
             @csrf
             <div class="Hotbg">
@@ -36,15 +41,15 @@
     </head>
 
     <body>
-        <div >
-        @yield('result')
+        <div>
+            @yield('result')
         </div>
-        
+
 
 
     </body>
 
-</html>
+
 </body>
 
 </html>

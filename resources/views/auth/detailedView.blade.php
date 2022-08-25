@@ -17,6 +17,15 @@
 <body>
 
 </body>
+<nav style="padding-left:40%; ;" class="navBar">
+    <div class="">
+        <a style="" href="/auth/dashboard/host/{{$user->user_id}}">Host A place</a>
+        <a href="/auth/dashboard/popularPlaces/{{$user->user_id}}" class="a3">Popular Places</a>
+        <a href="/auth/dashboard" style="color:black;">Back </a>
+        <button class="btn btn-primary"><a href="{{ route('auth.logout') }}" style="color:black;">Logout</a></button>
+    </div>
+</nav>
+
 <div class="PostContain">
 
     <div class="postImg">

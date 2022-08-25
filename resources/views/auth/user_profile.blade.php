@@ -139,7 +139,34 @@
             </div>
             <button class="accordion"> Show Customer Requests<i style="margin-left:200px;scale:100px;" class="fas fa-bell"> {{count($requestbyothers)}}</i></button>
             <div class="panel">
+            <div class="postDi">
+                    <div class="pos" style="display: flex;flex-wrap:wrap;">
 
+                        @foreach($requestbyothers as $r)
+                        
+                   
+                        <div class="post" style="width: 18rem;">
+
+                            <img src="/img/posts/{{$r->image}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Tittle: {{ $r->area }}</h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Posted By: {{ $r->firstName }} {{ $r->lastName }}</li>
+                                <li class="list-group-item">Price: {{ $r->price }}</li>
+                                <li class="list-group-item">Block: {{ $r->block }}</li>
+                                <li class="list-group-item">Restiction : {{ $r->restriction }}</li>
+                                <li class="list-group-item">Posted on : {{ $r->post_date }}</li>
+                                <li style="background-color:aqua;text-align:center;">Request Type : {{ $r->request_type }}</li>
+
+                            </ul>
+
+                        </div>
+                  
+                        @endforeach
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
 
