@@ -81,11 +81,13 @@
             <Button class="button" style="margin:5%;" formaction="{{ route('post.request2', ['User_id'=>$User_id,'post_id'=>$post->post_id]) }}">Request Visit</Button>
         </form>
     </div>
-    @if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
+    <div style="margin:20%;" class="alert">
+        @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+        @endif
     </div>
-    @endif
 </div>
 
 </html>
