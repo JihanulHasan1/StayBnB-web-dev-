@@ -9,8 +9,10 @@
         <div class="posts">
             @foreach($result as $r)
             <button></button>
+          @if($user->user_id!=NULL)
             <a class="jian" href="{{ route('post.detailedView', ['User_id'=>$user->user_id,'post_id'=>$r->post_id]) }}">
-                <div class="post" style="width: 18rem;">
+              @endif
+            <div class="post" style="width: 18rem;">
                     <img src="/img/posts/{{$r->image}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tittle: {{ $r->area }}</h5>

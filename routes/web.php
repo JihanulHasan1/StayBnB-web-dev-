@@ -21,7 +21,7 @@ Route::get('/staybnb', [HomePageController::class, 'home'])->name('auth.home');
 Route::get('/staybnb{parmalink}', [HomePageController::class, 'allads'])->name('ads');
 
 //REGISTER
-Route::post('/home', [UserController::class, 'store'])->name('auth.store');
+Route::post('/staybnb', [UserController::class, 'store'])->name('auth.store');
 
 //LOGIN
 // Route::post('/auth/login',[UserController:: class,'login'])->name('auth.login');
@@ -45,6 +45,7 @@ Route::post('/auth/dashboard/host/posts/{id}', [PostController::class, 'store'])
 //SEARCH
 Route::get('/auth/dashboard/search/{id}', [UserController::class, 'search'])->name('auth.search');
 Route::post('/auth/dashboard/search/{id}', [SearchController::class, 'getSearchResult']);
+Route::post('/auth/dashboard/search/', [SearchController::class, 'getSearchResult2']);
 
 //POST DETAILED VIEW
 Route::get('/auth/dashboard/search/posts/{User_id}/{post_id}', [PostController::class, 'detailedView'])->name('post.detailedView');

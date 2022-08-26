@@ -401,6 +401,9 @@ nav {
     font-weight: 600;
     margin-bottom: 30px;
 }
+ul li {
+    list-style-type: none;
+  }
 
 .house {
     display: flex;
@@ -973,6 +976,7 @@ a {
 a {
     font-family: 'Cairo', sans-serif;
     font-size: 20px;
+    font-weight: bold;
     color: #000205;
 
 }

@@ -57,7 +57,7 @@ class UserController extends Controller
             }
             $save = $User->save();
             if ($save) {
-                return redirect('/home');
+                return redirect('/staybnb');
             } else {
                 return redirect('/auth/register');
             }
@@ -140,7 +140,7 @@ class UserController extends Controller
             }
         }
         foreach ($postrequests as $pr) {
-            echo $pr;
+            //echo $pr;
         }
 
         foreach ($result as $p) {

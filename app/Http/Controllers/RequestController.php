@@ -26,8 +26,9 @@ class RequestController extends Controller
             $UserRequest->req_type = 'Rent Out';
             $UserRequest->save();
             return view('checkout');
+            
         } else {
-            return redirect()->back()->with('message', 'AllReady Requested');
+            return view('checkout');
         }
     }
 

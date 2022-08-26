@@ -124,9 +124,10 @@
 
             <div class="search-bar">
                 <form action="/auth/dashboard/search/" method="POST">
+                    @csrf
                     <div class="location-input">
                         <label>Location</label>
-                        <input type="text" name="Road_Block" placeholder="Enter Road No. & Block No.">
+                        <input type="text" name="search" placeholder="Enter Road No. & Block No.">
                     </div>
                     <div>
                         <label>Date</label>

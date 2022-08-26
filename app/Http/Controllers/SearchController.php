@@ -27,4 +27,22 @@ class SearchController extends Controller
         $User = User::where('user_id', '=', $id)->first();
         return view('auth.searchResult',['result'=>$result,'user'=>$User]);
     }
+    function getSearchResult2(Request $request)
+    {
+
+        $Posts = Post::all();
+        $result = array();
+        foreach ($Posts as $p) {
+            if (Str::contains(Strtolower($p->area), Strtolower($request->search))) {
+                
+                array_push($result, $p);
+            }
+         }
+        $user=new User;;
+        $user->user_id='000';
+        
+       
+        return view('searchResult',['result'=>$result])->with('user',$user);
+    }
+
 }

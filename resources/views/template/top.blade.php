@@ -19,15 +19,16 @@
             <nav id="navBar">
                 <img src="{{url('img/tab-logo.png')}}" class="logo">
              
-                
                     @yield('top')
                     
                 
 
             </nav>
+            <H1 style="color:azure;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Welcome to StayBnB</H1>
+
         </div>
 
-        <div class="posts">
+        <div class="">
             @yield('posts')
         </div>
     </div>
